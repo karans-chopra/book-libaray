@@ -1,0 +1,46 @@
+<mat-toolbar>My Top Rated Books</mat-toolbar>
+<mat-grid-list cols="3">
+    <mat-grid-tile *ngFor="let book of favoriteBooks">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    <h4>{{book.title}}</h4>
+                </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{book.imageUrl}}" alt="{{book.title}}">
+            <mat-card-actions>
+                <button mat-button mat-raised-button class="detailsButton" [routerLink]="['/book/'+book.$key]">
+                    <i class="material-icons"> Visibility</i> Book Details
+                    </button>
+                <button mat-button mat-raised-button class="editButton" [routerLink]="['/edit-book/'+book.$key]">
+                    <i class="material-icons">Mode_edit</i>
+                    Edit Book
+                    </button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
+<mat-toolbar>
+    Books I Have Not read yet
+</mat-toolbar>
+<mat-grid-list cols="3">
+    <mat-grid-tile *ngFor="let book of unreadBooks">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    <h4>{{book.title}}</h4>
+                </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{book.imageUrl}}" alt="{{book.title}}">
+            <mat-card-actions>
+                <button mat-button mat-raised-button class="detailsButton" [routerLink]="['/book/'+book.$key]">
+                Book Details
+                </button>
+                <button mat-button mat-raised-button class="editButton" [routerLink]="['/edit-book/'+book.$key]">
+               
+                Edit Book
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

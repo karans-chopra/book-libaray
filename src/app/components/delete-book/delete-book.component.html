@@ -1,0 +1,15 @@
+<mat-toolbar color="warn"> Delete confirmation </mat-toolbar>
+
+
+<div class="delete-confirm">
+
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <span>{{bookDescription}}</span>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <button [routerLink]="['/book/'+id]" mat-button color="accent"> Go Back </button>
+            <button (click)="removeBook()" mat-raised-button color="warn">  Delete Permanently </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
